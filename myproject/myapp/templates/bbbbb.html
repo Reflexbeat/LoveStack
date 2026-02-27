@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Preview • LoveNote</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          roseDark: "#0f0a14",
+          rosePrimary: "#e11d48",
+          roseSoft: "#fb7185",
+          gold: "#fbbf24"
+        },
+        fontFamily: {
+          heading: ['Playfair Display','serif'],
+          body: ['Inter','sans-serif']
+        }
+      }
+    }
+  }
+  </script>
+
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background: radial-gradient(circle at 20% 30%, rgba(225,29,72,0.08), transparent 30%), radial-gradient(circle at 80% 70%, rgba(251,191,36,0.04), transparent 30%), #0f0a14; color:#fff}
+    .card-bg{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.06); backdrop-filter: blur(8px)}
+    .rose-grad{background:linear-gradient(90deg,#e11d48,#fb7185)}
+    .meta-pill{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04)}
+    .copy-btn{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06)}
+  </style>
+</head>
+<body>
+
+  <header class="py-6 px-6 max-w-6xl mx-auto flex items-center justify-between">
+    <a href="{% url 'index' %}" class="text-2xl font-heading font-semibold">💌 LoveStack</a>
+    <div class="space-x-3">
+      <a href="{% url 'create_message' %}" class="px-4 py-2 rounded-full text-white" style="background:linear-gradient(90deg,#e11d48,#fb7185)">Create</a>
+      <a href="{% url 'index' %}" class="px-3 py-2 meta-pill rounded-lg text-sm">Home</a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto py-12 px-6">
+    <div class="text-center mb-8">
+      <h1 class="font-heading text-4xl md:text-5xl">Preview</h1>
+      <p class="text-gray-300 mt-3">How your note will appear — tweak, copy, or save.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <section class="md:col-span-2 card-bg rounded-3xl p-8">
+        <div class="flex items-start space-x-6">
+          <div class="w-20 h-20 rounded-xl overflow-hidden bg-gray-900 flex-shrink-0 border border-white/5">
+            {% if message.love_image %}
+              <img src="{{ message.love_image.url }}" alt="image" class="w-full h-full object-cover">
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
+            {% endif %}
+          </div>
+
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-gray-300">{{ message.occasion }} • {{ message.theme }}</div>
+                <h2 class="font-heading text-2xl mt-2">To {{ message.recipient }}</h2>
+                <div class="text-sm text-gray-400">From {{ message.sender }} • {{ message.date_created|date:"M d, Y" }}</div>
+              </div>
+              <div class="text-right space-y-2">
+                <button id="copyBtn" class="copy-btn px-3 py-2 rounded-lg text-sm">Copy</button>
+                {% if message.love_image %}
+                  <a id="downloadImage" href="{{ message.love_image.url }}" download class="copy-btn inline-block px-3 py-2 rounded-lg text-sm">Download Image</a>
+                {% endif %}
+              </div>
+            </div>
+
+            <article id="noteText" class="mt-6 text-lg leading-relaxed text-gray-100 whitespace-pre-wrap">{{ message.message }}</article>
+
+            <div class="mt-6 flex items-center space-x-3">
+              <a href="{% url 'create_message' %}" class="px-4 py-2 rounded-full text-white" style="background:linear-gradient(90deg,#e11d48,#fb7185)">Edit</a>
+              <a href="#" onclick="window.print(); return false;" class="px-4 py-2 copy-btn rounded-lg">Print</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card-bg rounded-3xl p-6">
+        <h3 class="text-lg font-medium mb-3">Summary</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li><strong class="text-white">From:</strong> {{ message.sender }}</li>
+          <li><strong class="text-white">To:</strong> {{ message.recipient }}</li>
+          <li><strong class="text-white">Occasion:</strong> {{ message.occasion }}</li>
+          <li><strong class="text-white">Theme:</strong> {{ message.theme }}</li>
+        </ul>
+
+        <div class="mt-6">
+          <h4 class="text-sm text-gray-400">Share</h4>
+          <div class="mt-3 flex space-x-2">
+            <button class="px-3 py-2 rounded-lg copy-btn" onclick="shareNote()">Share Link</button>
+            <button class="px-3 py-2 rounded-lg copy-btn" onclick="copyText()">Copy Text</button>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="py-8 text-center text-sm text-gray-400">&copy;2026 LoveStack By Reflex — crafted with care</footer>
+
+  <script>
+    function copyText(){
+      const txt = document.getElementById('noteText').innerText.trim();
+      navigator.clipboard.writeText(txt).then(()=>{
+        alert('Message copied to clipboard');
+      }).catch(()=>alert('Copy failed'));
+    }
+
+    document.getElementById('copyBtn').addEventListener('click', copyText);
+
+    function shareNote(){
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(()=>{ alert('Link copied to clipboard'); }).catch(()=>alert('Could not copy link'));
+    }
+  </script>
+
+</body>
+</html>

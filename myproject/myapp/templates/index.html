@@ -1,0 +1,249 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    <title>LoveStack</title>
+</head>
+
+<body>
+    <nav>
+        <img src="{% static 'myapp/assests/new.png' %}" alt="love">
+        <div class="menu-bar" id="menu-bar">
+            <i class="fas fa-bars" id="menu-icon"></i>
+            <!-- <i class="far fa-times" i></i> -->
+        </div>
+        <div class="list" id="nav-links">
+            <a href="index.html" class="navivation">Home</a>
+            <a href="./message.html" class="navivation">Message</a>
+            <a href="#f" class="navivation">About</a>
+        </div>
+    </nav>
+
+    <section class="hero-head">
+        <div class="hero-left">
+            <h1>Find the perfect words for every moment.</h1>
+            <p>Beautifully written messages for love, birthdays, celebrations, and every emotion.</p>
+
+            <div class="hero-actions">
+                <a href="#ex"><button class="primary-btn">Browse Templates</button></a>
+                <a href="./message.html"><button class="secondary-btn">Create Messages</button></a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="preview-container">
+
+                <div class="preview-card float1">
+                    <h4>Birthday 🎂</h4>
+                    <p>Wishing you joy, love and success today and always.</p>
+                    <button>LoveStack</button>
+                </div>
+
+                <div class="preview-card float2">
+                    <h4>Romantic ❤️</h4>
+                    <p>You are my forever and always.</p>
+                    <button>LoveStack</button>
+                </div>
+
+                <div class="preview-card float3">
+                    <h4>Apology 🙏</h4>
+                    <p>I’m truly sorry. Please forgive me.</p>
+                    <button>LoveStack</button>
+                </div>
+
+                <div class="preview-card float4">
+                    <h4>Celebration 🎉</h4>
+                    <p>Congratulations on your amazing achievement!</p>
+                    <button>LoveStack</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div id="ex"></div>
+    <section class="emotions">
+        <h1>Express Emotions With Ready-Made Templates!</h1> 
+        <div class="emotion">
+         
+            <a href="./love.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/mm.jpg' %}" alt="love">
+                    <h4>Unconditional Love</h4>
+                    <p>Get heartfelt Love message Template</p>
+                </div>
+            </a>
+            <a href="./friendship.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/f.jpg' %}" alt="friendship">
+                    <h4>Friendship</h4>
+                    <p>Get heartfelt Friendship message Template</p>
+                </div>
+            </a>
+            <a href="./apology.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/e.jpg' %}" alt="apology">
+                    <h4>Apology</h4>
+                    <p>Get heartfelt Apology message Template</p>
+                </div>
+            </a>
+            <a href="./support.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/Eid-Mubarak.png' %}" alt="">
+                    <h4>Support/Encouragement</h4>
+                    <p>Get heartfelt Encouragement message Template</p>
+                </div>
+            </a>
+            <a href="./appreciation.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/Eid-Mubarak.png' %}" alt="">
+                    <h4>Appreciation/Gratitude</h4>
+                    <p>Get heartfelt Appreciation message Template</p>
+                </div>
+            </a>
+            <a href="./condolence.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/Eid-Mubarak.png' %}" alt="">
+                    <h4>Condolence</h4>
+                    <p>Get heartfelt Condolence message Template</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="events">
+       
+        <h1>Explore The Occasions To Get A Free Message Template!</h1>
+        <div class="event">
+
+
+            <a href="./birthday.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/bd.jpeg' %}" alt="">
+                    <h4>Birthday</h4>
+                    <p>Get heartfelt Birthday message Template</p>
+                </div>
+            </a>
+            <a href="./page1.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/romantic-love-emoji-png-96-bdgxpvr2mzvpv2oi.png' %}" alt="">
+                    <h4>Valentine</h4>
+                    <p>Get heartfelt Valentine message Template</p>
+                </div>
+            </a>
+            <a href="./anniversary.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/ani.jpg' %}" alt="">
+                    <h4>Anniversary</h4>
+                    <p>Get heartfelt Anniversary message Template</p>
+                </div>
+            </a>
+            <a href="./graduation.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/cap.jpg' %}" alt="">
+                    <h4>Graduation</h4>
+                    <p>Get heartfelt Graduation message Template</p>
+                </div>
+            </a>
+            <a href="./christmas.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/xmas.jpg' %}" alt="">
+                    <h4>Christmas</h4>
+                    <p>Get heartfelt Christmas message Template</p>
+                </div>
+            </a>
+
+            <a href="./newyear.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/fire.jpg' %}" alt="">
+                    <h4>New Year</h4>
+                    <p>Get heartfelt New Year message Template</p>
+                </div>
+            </a>
+            <a href="./mothers.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/mm.jpg' %}" alt="">
+                    <h4>Mother's Day</h4>
+                    <p>Get heartfelt Mother's Day message Template</p>
+                </div>
+            </a>
+            <a href="./fathers.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/f.jpg' %}" alt="">
+                    <h4>Father's Day</h4>
+                    <p>Get heartfelt Father's Day message Template</p>
+                </div>
+            </a>
+            <a href="./easter.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/e.jpg' %}" alt="">
+                    <h4>Easter</h4>
+                    <p>Get heartfelt Easter message Template</p>
+                </div>
+            </a>
+            <a href="./eid.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/Eid-Mubarak.png' %}" alt="">
+                    <h4>Eid Mubarak</h4>
+                    <p>Get heartfelt Eid Mubarak message Template</p>
+                </div>
+            </a>
+            <a href="./wedding.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/ring.jpg' %}" alt="">
+                    <h4>Wedding</h4>
+                    <p>Get heartfelt Wedding message Template</p>
+                </div>
+            </a>
+            <a href="./children.html">
+                <div class="event1">
+                    <img src="{% static 'myapp/assets/my.jpeg' %}" alt="">
+                    <h4>Children's Day</h4>
+                    <p>Get heartfelt Children's Day message Template</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <div id="form"></div>
+    <div id="float-container"></div>
+    <div id="f"></div>
+    <section class="about-container">
+        <h2>About Us</h2>
+        <div class="about-content">
+             <div class="about-text">
+                <p><span>LoveStack</span> is a modern message platform designed to help people express emotions beautifully,
+                 effortlessly and meaningfully. We believe that words have the power to heal, inspire, and connect hearts.
+                 This platform was created with one simple mission: to help people find the perfect words for every moment of
+                 life. Whether it’s expressing love, celebrating milestones, offering comfort, or sharing joy, we provide
+                 beautifully written message templates that make it easier to say what truly matters.
+
+                 Our goal is to promote love and peace through thoughtful communication. In a world that often feels rushed
+                 and disconnected, we encourage you to pause, reflect, and cherish the bonds that make life meaningful.
+                 <span>LoveStack is here to remind you that "love is a
+                 beautiful thing".</span> 
+                </p>
+             </div>
+            <img src="./assets/hero.jpg" alt="">
+        </div>
+    </section>
+    <footer>
+        <!-- <h4>Contact Us</h4> -->
+        <div class="socials">
+            <a href="https://www.instagram.com/reflexbeat?igsh=dGwzOXh4N3UxeGw0&utm_source=qr"><i
+                    class="fab fa-instagram-square"></i></a>
+            <a href="https://www.facebook.com/share/1CNqXwe85d/?mibextid=wwXIfr"><i
+                    class="fab fa-facebook-square"></i></a>
+            <a href="https://www.tiktok.com/@deridazofficial?_r=1&_t=ZS-93zB9YSueG7"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p class="pp">&copy;2026 LoveStack By Reflex, All Rights Reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <title>Valentine</title>
+</head>
+
+<body>
+    <nav>
+        <img src="{% static 'myapp/assets/new.png' %}" alt="">
+        <div class="menu-bar" id="menu-bar">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </div>
+        <div class="list" id="nav-links">
+            <a href="./message.html" class="navivation">Create Message</a>
+            <a href="./index.html" class="navivation">Home</a>
+        </div>
+    </nav>
+    <section class="val-containner">
+        <p><span>✨Free Templates • Instant Copy • No Signup•</span></p>
+        <h1>Valentine Message Templates.</h1>
+        <p>Browse our collection of pre-written valentine messages. Copy and customize them to your standard.</p>
+    </section>
+
+    <section class="filter-bar">
+        <input type="text" name="search" id="searchbar" placeholder="Search messages, occasions or tones....">
+    </section>
+
+    <section class="card-containner" id="card-containner">
+
+        <div class="card" data-occasion="valentine" data-tone="romantic">
+            <h4>Valentine🌹</h4>
+            <p><span>Romantic•</span></p>
+            <div class="card-content">
+                <p>Sweetheart, you are the heartbeat of my existence. Every moment with you feels like
+                    magic, and every kiss feels like the first. On this Valentine’s Day, I want to
+                    thank you for being my anchor, my joy, and my greatest adventure. I promise to love you fiercely, to
+                    cherish you endlessly, and to never let a day go by without reminding you how
+                    precious you are to me. You are my Valentine today and for all the days to come.</p>
+            </div>
+            <span class="show-toggle">Show more</span>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <div id="toast">Copied</div>
+
+        <div class="card">
+            <h4>Valentine🌹</h4>
+            <p><span>Romantic•</span></p>
+            <div class="card-content">
+                <p>Happy Valentine’s Day to the one who makes my world brighter. You are my safe place,
+                    my
+                    adventure,
+                    and my sweetest dream come true. When I look into your eyes, I see a future filled with laughter,
+                    love, and endless possibilities. I promise to stand by you through every storm and celebrate with
+                    you in every sunshine. You are my forever Valentine, and I will spend my life proving just how much
+                    you
+                    mean to me.</p>
+            </div>
+            <span class="show-toggle">Show more</span>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <div id="toast">Copied</div>
+
+        <div class="card">
+            <h4>Valentine🌹</h4>
+            <p><span>Romantic•</span></p>
+            <div class="card-content">
+                <p>To the love of my life, Valentine’s Day is just another excuse to shower you with
+                    affection, but the truth
+                    is, I celebrate you every single day. You are the reason I smile without cause, the reason my heart
+                    races, and the reason
+                    I believe in miracles. I want to grow old with you, holding your hand through every chapter of our
+                    story. You are my best
+                    friend and my partner.</p>
+            </div>
+            <span class="show-toggle">Show more</span>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <div id="toast">Copied</div>
+
+        <div class="card">
+            <h4>Valentine🌹</h4>
+            <p><span>Romantic•</span></p>
+            <div class="card-content">
+                <p>Darling, you are the poetry my heart writes every day. With you, love is not just a
+                    feeling — it’s a
+                    beautiful journey of trust, passion, and endless devotion. You’ve taught me that true love is
+                    patient,
+                    kind, and unwavering.
+                    On this Valentine’s Day, I want you to know that no matter where life takes us, my heart will always
+                    find its way back to you.
+                    You are my greatest gift, my eternal Valentine.</p>
+            </div>
+            <span class="show-toggle">Show more</span>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <div id="toast">Copied</div>
+
+        <div class="card">
+            <h4>Valentine🌹</h4>
+            <p><span>Romantic•</span></p>
+            <div class="card-content">
+                <p>My love, every day with you feels like Valentine’s Day, but today I want to remind
+                    you
+                    just how deeply you mean to me. You are the melody in my silence, the warmth
+                    in my coldest nights, and the reason my heart beats with joy. I never believed in soulmates until I
+                    met
+                    you, and now I can’t imagine a world where you aren’t mine. Thank you for
+                    loving me in ways I never thought possible. Forever and always, I choose you.</p>
+            </div>
+            <span class="show-toggle">Show more</span>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <div id="toast">Copied</div>
+        
+        
+    </section>
+
+    <footer>
+        <!-- <h4>Contact Us</h4> -->
+        <div class="socials">
+            <a href="https://www.instagram.com/reflexbeat?igsh=dGwzOXh4N3UxeGw0&utm_source=qr"><i
+                    class="fab fa-instagram-square"></i></a>
+            <a href="https://www.facebook.com/share/1CNqXwe85d/?mibextid=wwXIfr"><i
+                    class="fab fa-facebook-square"></i></a>
+            <a href="https://www.tiktok.com/@deridazofficial?_r=1&_t=ZS-93zB9YSueG7"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p class="pp">&copy;2026 LoveStack By Reflex, All Rights Reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
